@@ -27,3 +27,5 @@ hs_err_pid*
 .idea/workspace.xml
 expertSystem/.idea/
 expertSystem/expertSystem.iml
+*.DB_Store
+.DS_Store
