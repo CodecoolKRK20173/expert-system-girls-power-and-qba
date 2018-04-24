@@ -2,9 +2,9 @@ package com.codecool.expertSystem;
 
 public class Question {
 
-    String id;
-    String question;
-    Answer answer;
+    private String id;
+    private String question;
+    private Answer answer;
 
     public Question(String id, String question, Answer answer) {
         this.id = id;
@@ -13,18 +13,18 @@ public class Question {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getQuestion() {
-        return question;
+        return this.question;
     }
 
     public Answer getAnswer() {
-        return answer;
+        return this.answer;
     }
 
     public boolean getEvaluatedAnswer(String input) {
-        return answer.evaluateAnswerByInput(input);
+        return this.answer.evaluateAnswerByInput(input);
     }
 }

@@ -2,16 +2,23 @@ package com.codecool.expertSystem;
 import java.util.List;
 import java.util.ArrayList;
 
-class Answer {
+import java.util.*;
 
-    List<Value> values = new ArrayList<>();
+class Answer {
+    List<Value> valueList = new ArrayList<>();
 
     public void addValue(Value value) {
-        values.add(value);
+        this.valueList.add(value);
     }
     
-    public boolean evaluateAnswerByInput(String input) {
-        //
+    public boolean evaluateAnswerByInput(String userInput) {
+        for(Value element : this.valueList) {
+            for(String value : element.getInputPattern()) {
+                if(userInput.equals(value)) {
+                    return element.getSelectionType();
+                }
+            }
+        }
         return false;
     }
 }
