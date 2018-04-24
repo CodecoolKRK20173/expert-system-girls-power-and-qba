@@ -3,27 +3,27 @@ package com.codecool.expertSystem;
 import java.util.Set;
 import java.util.HashSet;
 
-class Fact {
+public class Fact {
 
-    private String id;
+    private String factId;
     private String description;
-    private Set<String> idSet;
+    private Set<String> evalIdSet;
 
-    Fact(String id, String description) {
-        this.id = id;
+    public Fact(String factId, String description) {
+        this.factId = factId;
         this.description = description;
-        this.idSet = new HashSet<>();
+        this.evalIdSet = new HashSet<>();
     }
 
-    public Set<String> getIdSet() {
-        return idSet;
+    public Set<String> getEvalIdSet() {
+        return evalIdSet;
     } 
 
-    public void setFactValueById(String id, boolean value) {
+    public void setFactValueByEvalId(String evalId, boolean value) {
         //
     }
     
-    public boolean getValueById(String id) {
+    public boolean getValueByEvalId(String evalId) {
         //
         return false;
     }
