@@ -29,3 +29,4 @@ expertSystem/.idea/
 expertSystem/expertSystem.iml
 *.DB_Store
 .DS_Store
+expertSystem/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
