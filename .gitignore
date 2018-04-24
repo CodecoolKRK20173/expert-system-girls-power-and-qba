@@ -31,5 +31,8 @@ expertSystem/expertSystem.iml
 .DS_Store
 
 */target/**
+*/.settings/**
+*/.classpath
+*/.project
 .lst
 
