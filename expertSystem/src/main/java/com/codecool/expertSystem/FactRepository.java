@@ -13,7 +13,7 @@ class FactRepository {
     }
 
     public void addFact(Fact fact) {
-        //
+        factList.add(fact);
     }
 
     public Iterator<Fact> getIterator() {
