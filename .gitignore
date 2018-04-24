@@ -30,6 +30,6 @@ expertSystem/expertSystem.iml
 *.DB_Store
 .DS_Store
 
-target/
+*/target/**
 .lst
 
