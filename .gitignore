@@ -22,14 +22,14 @@
 hs_err_pid*
 
 
-.idea/expert-system-girls-power-and-qba.iml
-.idea/modules.xml
-.idea/workspace.xml
-expertSystem/.idea/
+.idea/**
 expertSystem/expertSystem.iml
 *.DB_Store
 .DS_Store
 
 */target/**
+*/.settings/**
+*/.classpath
+*/.project
 .lst
 
