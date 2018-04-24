@@ -1,8 +1,19 @@
 package com.codecool.expertSystem;
+import java.util.*;
 
-class SingleValue {
+class SingleValue extends Value {
+    String param;
+    
 
-    public void SingleValue(String param, boolean selectionType) {
-        //
+    public SingleValue(String param, boolean selectionType) {
+        this.setSelectionType(selectionType);
+        this.param = param;
+        
+    }
+
+    public List<String> getInputPattern() {
+        List<String> paramList = new ArrayList<>();
+        paramList.add(param);
+        return paramList;
     }
 }
