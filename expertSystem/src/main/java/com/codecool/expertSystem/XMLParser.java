@@ -1,18 +1,36 @@
 package com.codecool.expertSystem;
 
-import java.io.File;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import java.io.File;
 
 public abstract class XMLParser {
+
+    private File fXmlFile;
+    private DocumentBuilderFactory dbFactory;
+    private DocumentBuilder dBuilder;
+    private Document doc;
+
     public abstract void parse();
 
     public void loadXmlDocument(String xmlPath) {
     	try {
-    		Document document = builder.parse(new FileInputStream(xmlPath));
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            fXmlFile = new File(xmlPath);
+            dbFactory = DocumentBuilderFactory.newInstance();
+            dBuilder = dbFactory.newDocumentBuilder();
+            doc = dBuilder.parse(fXmlFile);
+            doc.getDocumentElement().normalize();
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public Document getDoc() {
+        return doc;
     }
 }
