@@ -22,7 +22,7 @@
 hs_err_pid*
 
 
-.idea/**
+*/.idea/**
 expertSystem/expertSystem.iml
 *.DB_Store
 .DS_Store
