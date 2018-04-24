@@ -8,7 +8,7 @@ public class FactRepository {
     private List<Fact> factList;
 
 
-    FactRepository() {
+    public FactRepository() {
         this.factList = new ArrayList<>();
     }
 
