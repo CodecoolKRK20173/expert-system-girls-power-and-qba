@@ -14,7 +14,7 @@ class SingleValue extends Value {
         this.selectionType = selectionType;
     }
 
-    public List<String> gestInputPattern() {
+    public List<String> getInputPattern() {
         return pattern;
     }
 

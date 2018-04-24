@@ -7,11 +7,11 @@ abstract class Value {
 
     public abstract List<String> getInputPattern();
 
-    public boolean getSelectionType() {
-        return selectionType;
-    }
+    public abstract boolean getSelectionType(); 
+        // return selectionType;
+    // }
 
-    public void setSelectionType(boolean selectionType) {
-        this.selectionType = selectionType;
-    }
+    // public void setSelectionType(boolean selectionType) {
+    //     this.selectionType = selectionType;
+    // }
 }
