@@ -8,6 +8,6 @@ public class RuleRepository {
     }
 
     public Iterator<Question> getIterator() {
-        return new Iterator<Question>;
+        return null;
     }
 }

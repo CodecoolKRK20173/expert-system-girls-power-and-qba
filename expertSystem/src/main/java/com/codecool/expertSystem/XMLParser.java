@@ -31,6 +31,7 @@ public abstract class XMLParser {
     }
 
     public Document getDoc() {
+        // loadXmlDocument();
         return doc;
     }
 }
