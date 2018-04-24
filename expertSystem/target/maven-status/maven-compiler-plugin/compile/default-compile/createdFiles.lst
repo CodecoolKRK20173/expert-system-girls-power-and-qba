@@ -1,0 +1,12 @@
+com/codecool/expertSystem/RuleRepository.class
+com/codecool/expertSystem/XMLParser.class
+com/codecool/expertSystem/RuleParser.class
+com/codecool/expertSystem/FactRepository.class
+com/codecool/expertSystem/MultipleValue.class
+com/codecool/expertSystem/Fact.class
+com/codecool/expertSystem/SingleValue.class
+com/codecool/expertSystem/FactParser.class
+com/codecool/expertSystem/Value.class
+com/codecool/expertSystem/FactIterator.class
+com/codecool/expertSystem/Answer.class
+com/codecool/expertSystem/Question.class
