@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 class SingleValue extends Value {
-    private List<String> pattern = new ArrayList<>();
+    private List<String> pattern;
 
-    public void SingleValue(String param, boolean selectionType) {
+    public SingleValue(String param, boolean selectionType) {
+        this.pattern = new ArrayList<>();
         this.pattern.add(param);
         this.setSelectionType(selectionType);
     }

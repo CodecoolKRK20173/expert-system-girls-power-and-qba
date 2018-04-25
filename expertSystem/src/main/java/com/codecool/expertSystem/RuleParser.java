@@ -21,9 +21,9 @@ class RuleParser extends XMLParser{
     private List<Value> values;
 
 
-    public RuleParser(String fileName) {
+    public RuleParser() {
 
-        loadXmlDocument(fileName);
+        loadXmlDocument("src/main/java/com/codecool/expertSystem/Question.xml");
         this.ruleRepository = new RuleRepository();
         values = new ArrayList<>();
     }
