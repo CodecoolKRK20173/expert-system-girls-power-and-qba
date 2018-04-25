@@ -16,6 +16,7 @@ public class ESProvider {
         Iterator<Question> questionIterator = ruleParser.getRuleRepository().getIterator();
         questionAnswer = new HashMap<>();
         Question question;
+
         while(questionIterator.hasNext()) {
             question = questionIterator.next();
             questionAnswer.put(question.getId(), question.getAnswer());
@@ -24,7 +25,7 @@ public class ESProvider {
     }
 
     public boolean getAnswerByQuestion(String questionId) {
-        return false;
+        return questionAnswer.get(questionId);
     }
 
     public String evaluate() {
