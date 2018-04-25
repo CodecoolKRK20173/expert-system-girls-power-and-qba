@@ -7,18 +7,25 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 class RuleParser extends XMLParser{
 
     private RuleRepository ruleRepository;
-    
+    private String question;
+    private String id;
+    private Answer answer;
+    private List<Value> values;
+
 
     public RuleParser(String fileName) {
 
         loadXmlDocument(fileName);
         this.ruleRepository = new RuleRepository();
-        // getDoc();
+        values = new ArrayList<>();
     }
 
 
@@ -28,48 +35,49 @@ class RuleParser extends XMLParser{
 
     public void parse() {
         try {
-        getDoc().getDocumentElement().normalize();
-            System.out.println("Root element :" + getDoc().getDocumentElement().getNodeName());
-            NodeList nList = getDoc().getElementsByTagName("Rule");
-            System.out.println("----------------------------");
-        
-            for (int temp = 0; temp < nList.getLength(); temp++) {
-                NodeList nList2 = getDoc().getElementsByTagName("Question");
-                Node nNode2 = nList2.item(temp);
+            getDoc().getDocumentElement().normalize();
+            NodeList ruleList = getDoc().getElementsByTagName("Rule");
+
+            for(int i=0; i<ruleList.getLength(); i++) {
+                Element ruleElement = (Element) ruleList.item(i);
+
+                NodeList questionList = ruleElement.getElementsByTagName("Question");
+                NodeList selectionList = ruleElement.getElementsByTagName("Selection");
+                NodeList answerList = ruleElement.getElementsByTagName("SingleValue");
+                if(answerList.getLength() == 0) {
+                    answerList = ruleElement.getElementsByTagName("MultipleValue");
+                }
+
+                Element questionElement = (Element) questionList.item(0);
+
+                question = questionElement.getTextContent();
+                id = ruleElement.getAttribute("id");
+                answer = new Answer();
+
+                for(int j=0; j<selectionList.getLength(); j++) {
+                    Element selectionElement = (Element) selectionList.item(j);
+                    Element answerElement = (Element) answerList.item(j);
+                    
+                    if(answerElement.getAttribute("value").contains(",")) {
+                        List<String> params = Arrays.asList(answerElement.getAttribute("value").split(","));
+                        boolean selectionType = Boolean.valueOf(selectionElement.getAttribute("value"));
+                        values.add(new MultipleValue(params, selectionType));
+                    } else {
+                        boolean selectionType = Boolean.valueOf(selectionElement.getAttribute("value"));
+                        values.add(new SingleValue(answerElement.getAttribute("value"), selectionType));
+                    }
                 
-                // System.out.println("lista------------" + );
-                // System.out.println("\nCurrent Element :" + nNode2.getNodeName());
-                        
-                if (nNode2.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement2 = (Element) nNode2;
-                    System.out.println("id : " + eElement2.getTextContent());
                 }
+                for(Value value : values)
+                    answer.addValue(value);
 
-        
-                Node nNode = nList.item(temp);
-                        
-                System.out.println("\nCurrent Element :" + nNode.getNodeName());
-                        
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-        
-                    Element eElement = (Element) nNode;
-                    System.out.println("id : " + eElement.getAttribute("id"));
-
-                    // Node nodee = 
-
-                    // System.out.println("");
-                    // System.out.println("First Name : " + eElement.getElementsByTagName("firstname").item(0).getTextContent());
-                    // System.out.println("Last Name : " + eElement.getElementsByTagName("lastname").item(0).getTextContent());
-                    // System.out.println("Nick Name : " + eElement.getElementsByTagName("nickname").item(0).getTextContent());
-                    // System.out.println("Salary : " + eElement.getElementsByTagName("salary").item(0).getTextContent());
-        
-                }
-             
+                ruleRepository.addQuestion(new Question(id, question, answer));
             }
-            } catch (Exception e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
-            }
-          }
+        }
+    }
     
 
 
