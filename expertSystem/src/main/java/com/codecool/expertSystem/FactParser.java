@@ -15,6 +15,7 @@ class FactParser extends XMLParser {
     public FactParser() {
         super.loadXmlDocument("src/main/java/com/codecool/expertSystem/Fact.xml");
         this.factRepository = new FactRepository();    
+        parse();
     }
 
     public FactRepository getFactRepository() {

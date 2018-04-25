@@ -17,7 +17,6 @@ public class FactRepository {
     }
 
     public Iterator<Fact> getIterator() {
-        //Can be default iterator
         return factList.iterator();
     }
 }

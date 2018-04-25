@@ -26,6 +26,7 @@ class RuleParser extends XMLParser{
         loadXmlDocument("src/main/java/com/codecool/expertSystem/Question.xml");
         this.ruleRepository = new RuleRepository();
         values = new ArrayList<>();
+        parse();
     }
 
 
