@@ -51,7 +51,8 @@ class FactParser extends XMLParser {
             for (int x = 0; x < evalList.getLength(); x++) {
                 evalNode = evalList.item(x);
                 evalElement = (Element) evalNode;
-                fact.setFactValueByEvalId(evalElement.getAttribute("id"), Boolean.valueOf(evalElement.getTextContent()));
+                fact.setFactValueByEvalId(evalElement.getAttribute("id"),
+                            Boolean.valueOf(evalElement.getTextContent()));
             }
             factRepository.addFact(fact);
         }
