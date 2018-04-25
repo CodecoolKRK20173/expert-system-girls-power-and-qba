@@ -13,7 +13,7 @@ class FactParser extends XMLParser {
     private FactRepository factRepository;
 
     public FactParser() {
-        super.loadXmlDocument("Fact.xml");
+        super.loadXmlDocument("src/main/java/com/codecool/expertSystem/Fact.xml");
         this.factRepository = new FactRepository();    
     }
 
@@ -51,7 +51,8 @@ class FactParser extends XMLParser {
             for (int x = 0; x < evalList.getLength(); x++) {
                 evalNode = evalList.item(x);
                 evalElement = (Element) evalNode;
-                fact.setFactValueByEvalId(evalElement.getAttribute("id"), Boolean.valueOf(evalElement.getTextContent()));
+                fact.setFactValueByEvalId(evalElement.getAttribute("id"),
+                            Boolean.valueOf(evalElement.getTextContent()));
             }
             factRepository.addFact(fact);
         }

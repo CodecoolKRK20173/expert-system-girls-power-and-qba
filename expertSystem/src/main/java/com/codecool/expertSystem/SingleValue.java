@@ -8,7 +8,7 @@ class SingleValue extends Value {
     private List<String> pattern;
 
     public SingleValue(String param, boolean selectionType) {
-        pattern = new ArrayList<>();
+        this.pattern = new ArrayList<>();
         this.pattern.add(param);
         this.setSelectionType(selectionType);
     }

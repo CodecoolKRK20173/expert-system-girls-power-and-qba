@@ -6,7 +6,7 @@ class MultipleValue extends Value {
     private List<String> pattern;
     
     public MultipleValue(List<String> params, boolean selectionType) {
-        pattern = new ArrayList<>();
+        this.pattern = new ArrayList<>();
         this.pattern.addAll(params);
         this.setSelectionType(selectionType);
     }
