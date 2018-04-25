@@ -5,8 +5,13 @@ import java.util.ArrayList;
 import java.util.*;
 
 class Answer {
-    List<Value> valueList = new ArrayList<>();
+    
+    private List<Value> valueList;
 
+    public Answer() {
+        this.valueList =  = new ArrayList<>();
+    }
+    
     public void addValue(Value value) {
         this.valueList.add(value);
     }
