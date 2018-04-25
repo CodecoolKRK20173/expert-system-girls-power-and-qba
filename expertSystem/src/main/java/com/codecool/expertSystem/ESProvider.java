@@ -22,7 +22,7 @@ public class ESProvider {
         while(questionIterator.hasNext()) {
             question = questionIterator.next();
             input = ui.userInput(question.getQuestion());
-            questionAnswer.put(question.getId(), question.getAnswer().evaluateAnswerByInput(input));
+            questionAnswer.put(question.getId(), question.getEvaluatedAnswer(input));
         }
 
     }
