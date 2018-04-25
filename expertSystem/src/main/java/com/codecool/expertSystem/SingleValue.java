@@ -5,20 +5,14 @@ import java.util.List;
 import java.util.ArrayList;
 
 class SingleValue extends Value {
-
-    private List<String> pattern;
-    private boolean selectionType;
+    private List<String> pattern = new ArrayList<>();
 
     public void SingleValue(String param, boolean selectionType) {
         this.pattern.add(param);
-        this.selectionType = selectionType;
+        this.setSelectionType(selectionType);
     }
 
     public List<String> getInputPattern() {
         return pattern;
-    }
-
-    public boolean getSelectionType() {
-        return selectionType;
     }
 }
