@@ -9,7 +9,7 @@ class Answer {
     private List<Value> valueList;
 
     public Answer() {
-        this.valueList =  = new ArrayList<>();
+        this.valueList = new ArrayList<>();
     }
     
     public void addValue(Value value) {
