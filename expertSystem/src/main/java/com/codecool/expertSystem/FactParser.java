@@ -26,22 +26,31 @@ class FactParser extends XMLParser {
         List<Boolean> evalListBoolean = new ArrayList<>();
         NodeList factList = getDoc().getElementsByTagName("Fact");
         NodeList descriptionList = getDoc().getElementsByTagName("Description");
-
+        Node factNode;
+        Node descriptionNode;
+        Element factElement;
+        Element descriptionElemet;
+        NodeList evalList;
+        String factID;
+        String descriptionID;
+        Fact fact;
+        
         for (int i = 0; i < factList.getLength(); i++) {
 
-            Node factNode = factList.item(i);
-            Node descriptionNode = descriptionList.item(i);
-            Element factElement = (Element) factNode;
-            Element descriptionElemet = (Element) descriptionNode;
-            NodeList evalList = factElement.getElementsByTagName("Eval");
-    
-            String factID = factElement.getAttribute("id");
-            String descriptionID = descriptionElemet.getAttribute("value");
-            Fact fact = new Fact(factID, descriptionID);
-            
+            factNode = factList.item(i);
+            descriptionNode = descriptionList.item(i);
+            factElement = (Element) factNode;
+            descriptionElemet = (Element) descriptionNode;
+            evalList = factElement.getElementsByTagName("Eval");
+            factID = factElement.getAttribute("id");
+            descriptionID = descriptionElemet.getAttribute("value");
+            fact = new Fact(factID, descriptionID);
+            Node evalNode;
+            Element evalElement;
+
             for (int x = 0; x < evalList.getLength(); x++) {
-                Node evalNode = evalList.item(x);
-                Element evalElement = (Element) evalNode;
+                evalNode = evalList.item(x);
+                evalElement = (Element) evalNode;
                 fact.setFactValueByEvalId(evalElement.getAttribute("id"), Boolean.valueOf(evalElement.getTextContent()));
             }
             factRepository.addFact(fact);
