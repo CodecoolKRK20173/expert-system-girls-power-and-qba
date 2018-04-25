@@ -1,22 +1,16 @@
 package com.codecool.expertSystem;
 
-import java.util.List;
+import java.util.*;
 
 class MultipleValue extends Value {
-
-    private List<String> pattern;
-    private boolean selectionType;
-
+    private List<String> pattern = new ArrayList<>();
+    
     public void MultipleValue(List<String> params, boolean selectionType) {
         this.pattern.addAll(params);
-        this.selectionType = selectionType;
+        this.setSelectionType(selectionType);
     }
 
     public List<String> getInputPattern() {
         return pattern;
-    }
-
-    public boolean getSelectionType() {
-        return selectionType;
     }
 }

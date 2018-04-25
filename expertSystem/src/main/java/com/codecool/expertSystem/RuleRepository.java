@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class RuleRepository {
 
-    List<Question> questionList;
+    private List<Question> questionList;
 
     RuleRepository() {
         this.questionList = new ArrayList<>();
