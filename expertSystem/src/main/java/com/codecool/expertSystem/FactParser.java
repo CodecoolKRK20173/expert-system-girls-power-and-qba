@@ -13,7 +13,7 @@ class FactParser extends XMLParser {
     private FactRepository factRepository;
 
     public FactParser() {
-        super.loadXmlDocument("Fact.xml");
+        super.loadXmlDocument("src/main/java/com/codecool/expertSystem/Fact.xml");
         this.factRepository = new FactRepository();    
     }
 
