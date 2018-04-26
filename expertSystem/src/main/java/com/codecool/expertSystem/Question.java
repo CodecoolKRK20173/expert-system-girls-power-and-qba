@@ -1,5 +1,7 @@
 package com.codecool.expertSystem;
 
+import java.io.IOException;
+
 public class Question {
 
     private String id;
@@ -24,7 +26,7 @@ public class Question {
         return this.answer;
     }
 
-    public boolean getEvaluatedAnswer(String input) {
+    public boolean getEvaluatedAnswer(String input) throws IOException{
         return this.answer.evaluateAnswerByInput(input);
     }
 }
