@@ -1,10 +1,10 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.question;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.*;
 
-class Answer {
+public class Answer {
     
     private List<Value> valueList;
 
@@ -26,6 +26,5 @@ class Answer {
             }
         }
         throw new IOException();
-        // return false;
     }
 }

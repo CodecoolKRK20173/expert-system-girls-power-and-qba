@@ -1,8 +1,8 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.question;
 
 import java.util.List;
 
-abstract class Value {
+public abstract class Value {
     private boolean selectionType;
 
     public abstract List<String> getInputPattern();

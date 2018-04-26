@@ -1,5 +1,9 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.controller;
 
+import com.codecool.expertSystem.fact.Fact;
+import com.codecool.expertSystem.question.Question;
+import com.codecool.expertSystem.view.UI;
+import com.codecool.expertSystem.parse.*;
 import java.io.IOException;
 import java.util.*;
 
@@ -25,7 +29,6 @@ public class ESProvider {
             input = ui.userInput(question.getQuestion());
             questionAnswer.put(question.getId(), question.getEvaluatedAnswer(input));
         }
-
     }
 
     public boolean getAnswerByQuestion(String questionId) {

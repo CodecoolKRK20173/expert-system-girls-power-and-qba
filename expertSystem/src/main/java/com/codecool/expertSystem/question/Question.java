@@ -1,4 +1,4 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.question;
 
 import java.io.IOException;
 

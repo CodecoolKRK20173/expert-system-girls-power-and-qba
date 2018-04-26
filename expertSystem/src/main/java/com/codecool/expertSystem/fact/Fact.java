@@ -1,9 +1,8 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.fact;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.HashSet;
 
 public class Fact {
 
