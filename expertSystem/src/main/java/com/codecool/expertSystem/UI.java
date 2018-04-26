@@ -7,7 +7,7 @@ public class UI {
 
     public String userInput(String message) {
         System.out.println(message);
-        return scanner.nextLine();
+        return scanner.nextLine().toLowerCase();
     }
 
 }
