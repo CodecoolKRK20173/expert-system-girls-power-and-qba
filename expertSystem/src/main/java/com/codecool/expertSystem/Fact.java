@@ -1,31 +1,32 @@
 package com.codecool.expertSystem;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 
-class Fact {
+public class Fact {
 
-    private String id;
+    private String factId;
     private String description;
-    private Set<String> idSet;
+    private Map<String, Boolean> evalIdMap;
 
-    Fact(String id, String description) {
-        this.id = id;
+    public Fact(String factId, String description) {
+        this.factId = factId;
         this.description = description;
-        this.idSet = new HashSet<>();
+        this.evalIdMap = new HashMap<>();
     }
 
-    public Set<String> getIdSet() {
-        return idSet;
+    public Set<String> getEvalIdSet() {
+        return evalIdMap.keySet();
     } 
 
-    public void setFactValueById(String id, boolean value) {
-        //
+    public void setFactValueByEvalId(String evalId, boolean value) {
+        evalIdMap.put(evalId, value);
     }
     
-    public boolean getValueById(String id) {
-        //
-        return false;
+    public boolean getValueByEvalId(String evalId) {
+        return evalIdMap.get(evalId);
     }
 
     public String getDescription() {
