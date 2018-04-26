@@ -17,7 +17,7 @@ class RuleParser extends XMLParser{
     private RuleRepository ruleRepository;
     private String question;
     private String id;
-    private Answer answer;
+    // private Answer answer;
     private List<Value> values;
 
 
@@ -53,7 +53,7 @@ class RuleParser extends XMLParser{
 
                 question = questionElement.getTextContent();
                 id = ruleElement.getAttribute("id");
-                answer = new Answer();
+                Answer answer = new Answer();
 
                 for(int j=0; j<selectionList.getLength(); j++) {
                     Element selectionElement = (Element) selectionList.item(j);

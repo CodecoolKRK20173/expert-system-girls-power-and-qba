@@ -1,5 +1,6 @@
 package com.codecool.expertSystem;
 
+import java.io.IOException;
 import java.util.*;
 
 public class ESProvider {
@@ -13,7 +14,7 @@ public class ESProvider {
         this.ruleParser = ruleParser;
     }
 
-    public void collectAnswers() {
+    public void collectAnswers() throws IOException{
         Iterator<Question> questionIterator = ruleParser.getRuleRepository().getIterator();
         questionAnswer = new HashMap<>();
         Question question;
