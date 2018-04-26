@@ -1,11 +1,10 @@
 package com.codecool.expertSystem;
 
 import com.codecool.expertSystem.controller.ESProvider;
+import com.codecool.expertSystem.exception.WrongAnswerException;
 import com.codecool.expertSystem.parse.FactParser;
 import com.codecool.expertSystem.parse.RuleParser;
 import com.codecool.expertSystem.view.UI;
-
-import java.io.IOException;
 
 class Main {
 
@@ -18,8 +17,8 @@ class Main {
         try {
             esProvider.collectAnswers();
             ui.display(esProvider.evaluate());
-        } catch(IOException e) {
-            System.err.println("Wrong input !!");
+        } catch(WrongAnswerException e) {
+            System.err.println(e);
         }
     }
 }

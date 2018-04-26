@@ -1,5 +1,6 @@
 package com.codecool.expertSystem.controller;
 
+import com.codecool.expertSystem.exception.WrongAnswerException;
 import com.codecool.expertSystem.fact.Fact;
 import com.codecool.expertSystem.question.Question;
 import com.codecool.expertSystem.view.UI;
@@ -18,7 +19,7 @@ public class ESProvider {
         this.ruleParser = ruleParser;
     }
 
-    public void collectAnswers() throws IOException{
+    public void collectAnswers() throws WrongAnswerException {
         Iterator<Question> questionIterator = ruleParser.getRuleRepository().getIterator();
         questionAnswer = new HashMap<>();
         Question question;
@@ -31,11 +32,11 @@ public class ESProvider {
         }
     }
 
-    public boolean getAnswerByQuestion(String questionId) {
+    private boolean getAnswerByQuestion(String questionId) {
         return questionAnswer.get(questionId);
     }
 
-    public boolean isFactChoosen(Fact fact) {
+    private boolean isFactChoosen(Fact fact) {
         for(String evalId : fact.getEvalIdSet()) {
             if (fact.getValueByEvalId(evalId) != this.getAnswerByQuestion(evalId)) {
                 return false;
