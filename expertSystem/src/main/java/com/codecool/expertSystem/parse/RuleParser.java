@@ -15,7 +15,7 @@ public class RuleParser extends XMLParser{
     private RuleRepository ruleRepository;
     private String question;
     private String id;
-    List<Value> values;
+    private List<Value> values;
    
 
     public RuleParser() {
