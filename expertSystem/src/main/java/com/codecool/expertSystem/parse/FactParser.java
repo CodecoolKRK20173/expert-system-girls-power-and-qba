@@ -1,21 +1,19 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.parse;
 
-import org.w3c.dom.Document;
+import com.codecool.expertSystem.fact.Fact;
+import com.codecool.expertSystem.fact.FactRepository;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
-class FactParser extends XMLParser {
+public class FactParser extends XMLParser {
 
     private FactRepository factRepository;
 
     public FactParser() {
-        super.loadXmlDocument("src/main/java/com/codecool/expertSystem/Fact.xml");
+        super.loadXmlDocument("src/main/java/com/codecool/expertSystem/fact/Fact.xml");
         this.factRepository = new FactRepository();    
-        parse();
+        this.parse();
     }
 
     public FactRepository getFactRepository() {
@@ -23,8 +21,6 @@ class FactParser extends XMLParser {
     }
 
     public void parse() {
-
-        List<Boolean> evalListBoolean = new ArrayList<>();
         NodeList factList = getDoc().getElementsByTagName("Fact");
         NodeList descriptionList = getDoc().getElementsByTagName("Description");
         Node factNode;

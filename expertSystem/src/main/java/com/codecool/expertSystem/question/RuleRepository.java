@@ -1,4 +1,4 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.question;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ public class RuleRepository {
 
     private List<Question> questionList;
 
-    RuleRepository() {
+    public RuleRepository() {
         this.questionList = new ArrayList<>();
     }
 

@@ -1,4 +1,4 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.parse;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
@@ -31,7 +31,6 @@ public abstract class XMLParser {
     }
 
     public Document getDoc() {
-        // loadXmlDocument();
         return doc;
     }
 }

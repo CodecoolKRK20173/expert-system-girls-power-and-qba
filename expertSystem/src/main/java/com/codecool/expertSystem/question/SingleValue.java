@@ -1,10 +1,10 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.question;
 import java.util.*;
 
 import java.util.List;
 import java.util.ArrayList;
 
-class SingleValue extends Value {
+public class SingleValue extends Value {
     private List<String> pattern;
 
     public SingleValue(String param, boolean selectionType) {

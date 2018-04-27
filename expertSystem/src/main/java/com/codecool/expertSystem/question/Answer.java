@@ -1,10 +1,12 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.question;
+import com.codecool.expertSystem.exception.WrongAnswerException;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.*;
 
-class Answer {
+public class Answer {
     
     private List<Value> valueList;
 
@@ -17,7 +19,7 @@ class Answer {
         this.valueList.add(value);
     }
     
-    public boolean evaluateAnswerByInput(String userInput) throws IOException {
+    public boolean evaluateAnswerByInput(String userInput) throws WrongAnswerException {
         for(Value element : this.valueList) {
             for(String value : element.getInputPattern()) {
                 if(userInput.equals(value)) {
@@ -25,7 +27,6 @@ class Answer {
                 }
             }
         }
-        throw new IOException();
-        // return false;
+        throw new WrongAnswerException("Wrong input !!");
     }
 }

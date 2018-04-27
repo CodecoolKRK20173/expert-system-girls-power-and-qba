@@ -1,34 +1,28 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.parse;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
+
+import com.codecool.expertSystem.question.RuleRepository;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
 import org.w3c.dom.Element;
-import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import com.codecool.expertSystem.question.*;
 
 
-class RuleParser extends XMLParser{
+public class RuleParser extends XMLParser{
 
     private RuleRepository ruleRepository;
     private String question;
     private String id;
-    // private Answer answer;
     private List<Value> values;
 
-
     public RuleParser() {
-
-        loadXmlDocument("src/main/java/com/codecool/expertSystem/Question.xml");
+        loadXmlDocument("src/main/java/com/codecool/expertSystem/question/Question.xml");
         this.ruleRepository = new RuleRepository();
-        values = new ArrayList<>();
-        parse();
+        this.values = new ArrayList<>();
+        this.parse();
     }
-
 
     public RuleRepository getRuleRepository() {
         return ruleRepository;

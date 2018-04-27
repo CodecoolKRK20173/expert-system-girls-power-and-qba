@@ -1,8 +1,8 @@
-package com.codecool.expertSystem;
+package com.codecool.expertSystem.question;
 
 import java.util.*;
 
-class MultipleValue extends Value {
+public class MultipleValue extends Value {
     private List<String> pattern;
     
     public MultipleValue(List<String> params, boolean selectionType) {
