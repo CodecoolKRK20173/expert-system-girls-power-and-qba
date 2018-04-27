@@ -5,7 +5,6 @@ import com.codecool.expertSystem.fact.Fact;
 import com.codecool.expertSystem.question.Question;
 import com.codecool.expertSystem.view.UI;
 import com.codecool.expertSystem.parse.*;
-import java.io.IOException;
 import java.util.*;
 
 public class ESProvider {

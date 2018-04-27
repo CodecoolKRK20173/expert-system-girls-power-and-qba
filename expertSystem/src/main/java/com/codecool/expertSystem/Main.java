@@ -14,6 +14,7 @@ class Main {
         RuleParser ruleParser = new RuleParser();
         ESProvider esProvider = new ESProvider(factParser, ruleParser);
 
+        ui.clearScreen();
         try {
             esProvider.collectAnswers();
             ui.display(esProvider.evaluate());

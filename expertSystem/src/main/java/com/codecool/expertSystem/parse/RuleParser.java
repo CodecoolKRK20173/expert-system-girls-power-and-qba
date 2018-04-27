@@ -16,11 +16,11 @@ public class RuleParser extends XMLParser{
     private String question;
     private String id;
     private List<Value> values;
+   
 
     public RuleParser() {
         loadXmlDocument("src/main/java/com/codecool/expertSystem/question/Question.xml");
         this.ruleRepository = new RuleRepository();
-        this.values = new ArrayList<>();
         this.parse();
     }
 
@@ -29,6 +29,7 @@ public class RuleParser extends XMLParser{
     }
 
     public void parse() {
+        
         try {
             getDoc().getDocumentElement().normalize();
             NodeList ruleList = getDoc().getElementsByTagName("Rule");
@@ -49,10 +50,12 @@ public class RuleParser extends XMLParser{
                 id = ruleElement.getAttribute("id");
                 Answer answer = new Answer();
 
+                values = new ArrayList<>();
                 for(int j=0; j<selectionList.getLength(); j++) {
                     Element selectionElement = (Element) selectionList.item(j);
                     Element answerElement = (Element) answerList.item(j);
                     
+
                     if(answerElement.getAttribute("value").contains(",")) {
                         List<String> params = Arrays.asList(answerElement.getAttribute("value").split(","));
                         boolean selectionType = Boolean.valueOf(selectionElement.getAttribute("value"));

@@ -11,6 +11,10 @@ public class UI {
     }
 
     public void display(String name) {
-        System.out.println("\nPerfect place is " + name);
+        System.out.println("\nPerfect place for You is " + name + ".\n");
+    }
+
+    public void clearScreen() {
+        System.out.println("\033[H\033[2J");
     }
 }
