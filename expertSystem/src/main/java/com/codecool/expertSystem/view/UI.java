@@ -11,7 +11,6 @@ public class UI {
     }
 
     public void display(String name) {
-        clearScreen();
         System.out.println("\nPerfect place for You is " + name + ".\n");
     }
 
